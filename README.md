@@ -25,7 +25,7 @@ It helps learners explore different developer paths, roadmaps, project ideas, an
 
 ## 📁 Project Structure
 
-```text
+
 DevPath/
 │
 ├── index.html
@@ -286,12 +286,13 @@ It helps learners explore different developer paths, roadmaps, project ideas, an
 
 ## 📁 Project Structure
 
-```text
+
 DevPath/
 │
 ├── index.html
 ├── style.css
 ├── script.js
 └── README.md
+
 📸 Screenshots
 "C:\Users\Pooja\Downloads\Screenshot 2026-05-18 204125.png"
