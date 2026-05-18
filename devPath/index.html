@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevPath - Developer Roadmap</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">DevPath</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#developers">Developers</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#projects">Projects</a>
+      <a href="#cheatsheets">Cheatsheets</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div>
+        <h1>Build Your <span>Developer Roadmap</span> With Real Projects</h1>
+        <p>
+          DevPath helps beginners learn web development step by step with skills,
+          projects, and a clear path from basics to job-ready development.
+        </p>
+        <button class="btn" onclick="scrollToProjects()">Explore Projects</button>
+      </div>
+
+      <div class="hero-card">
+        <h3>Your Learning Progress</h3>
+
+        <div class="progress-box">
+          <p>HTML & CSS</p>
+          <div class="bar">
+            <div class="fill" style="width: 85%"></div>
+          </div>
+        </div>
+
+        <div class="progress-box">
+          <p>JavaScript</p>
+          <div class="bar">
+            <div class="fill" style="width: 60%"></div>
+          </div>
+        </div>
+
+        <div class="progress-box">
+          <p>Projects</p>
+          <div class="bar">
+            <div class="fill" style="width: 45%"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  
+  
+
+    <section id="developers">
+      <h2 class="section-title">Choose Your Developer Path</h2>
+      <p class="section-subtitle">Select a specialization to see relevant projects and technologies.</p>
+
+      <div class="developer-selector" id="primarySelector">
+        <div class="dev-card" onclick="selectPrimaryPath('frontend', this)">
+          <div class="dev-icon">🎨</div>
+          <h3>Frontend Developer</h3>
+          <p>Master UI/UX with React, Vue, and modern web technologies</p>
+        </div>
+
+        <div class="dev-card" onclick="selectPrimaryPath('backend', this)">
+          <div class="dev-icon">⚙️</div>
+          <h3>Backend Developer</h3>
+          <p>Build powerful server-side applications and APIs</p>
+        </div>
+      </div>
+
+      <div id="backendSubselector" class="developer-selector" style="display:none;">
+        <div class="dev-card" onclick="selectDeveloper('java', this)">
+          <div class="dev-icon">☕</div>
+          <h3>Java Full Stack</h3>
+          <p>Build robust services with Spring Boot and modern frontend</p>
+        </div>
+
+        <div class="dev-card" onclick="selectDeveloper('python', this)">
+          <div class="dev-icon">🐍</div>
+          <h3>Python Developer</h3>
+          <p>Master backend development with Django & FastAPI</p>
+        </div>
+
+        <div class="dev-card" onclick="selectDeveloper('mern', this)">
+          <div class="dev-icon">⚛️</div>
+          <h3>MERN Stack</h3>
+          <p>Full-stack JavaScript with MongoDB, Express, React, Node.js</p>
+        </div>
+      </div>
+
+      <div id="selectedDevInfo" class="dev-info-container" style="display:none;">
+        <button class="back-btn" onclick="goBack()">← Back</button>
+        <h3 class="dev-path-title"></h3>
+        
+        <div class="tech-stack-section">
+          <h4>Technology Stack</h4>
+          <div id="techStack" class="tech-grid"></div>
+        </div>
+
+        <div class="related-projects-section">
+          <h4>Related Projects</h4>
+          <div id="relatedProjects" class="projects"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap">
+      <h2 class="section-title">Learning Roadmaps</h2>
+      <p class="section-subtitle">Follow a structured path to master your chosen technology stack.</p>
+
+      <div class="roadmap-selector">
+        <div class="roadmap-card" onclick="displayRoadmap('javaFullStack', this)">
+          <div class="roadmap-icon">☕</div>
+          <h3>Java Full Stack</h3>
+          <p>Master Spring Boot, React, and database design</p>
+        </div>
+
+        <div class="roadmap-card" onclick="displayRoadmap('mernStack', this)">
+          <div class="roadmap-icon">⚛️</div>
+          <h3>MERN Stack</h3>
+          <p>Master MongoDB, Express, React, and Node.js</p>
+        </div>
+      </div>
+
+      <div id="roadmapDisplay" class="roadmap-display" style="display:none;">
+        <button class="back-btn" onclick="closeRoadmap()">← Back</button>
+        <h3 id="roadmapTitle" class="roadmap-title"></h3>
+        
+        <div id="roadmapSteps" class="roadmap-steps"></div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Project Ideas</h2>
+      <p class="section-subtitle">Choose projects based on your current skill level.</p>
+
+      <div class="filters">
+        <button class="filter-btn active" onclick="filterProjects('all', this)">All</button>
+        <button class="filter-btn" onclick="filterProjects('beginner', this)">Beginner</button>
+        <button class="filter-btn" onclick="filterProjects('intermediate', this)">Intermediate</button>
+        <button class="filter-btn" onclick="filterProjects('advanced', this)">Advanced</button>
+      </div>
+
+      <div class="projects">
+        <div class="project-card" data-level="beginner">
+          <span class="tag">Beginner</span>
+          <h3>Personal Portfolio</h3>
+          <p>Create a portfolio website with about, skills, projects, and contact sections.</p>
+          <button onclick="openModal('Personal Portfolio', 'Use HTML for structure, CSS for design, and JavaScript for smooth scrolling, theme toggle, and form validation.')">
+            View Details
+          </button>
+        </div>
+
+        <div class="project-card" data-level="beginner">
+          <span class="tag">Beginner</span>
+          <h3>To-Do App</h3>
+          <p>Build a task manager where users can add, delete, and mark tasks as complete.</p>
+          <button onclick="openModal('To-Do App', 'Practice DOM manipulation, events, arrays, and local storage to save tasks even after refresh.')">
+            View Details
+          </button>
+        </div>
+
+        <div class="project-card" data-level="intermediate">
+          <span class="tag">Intermediate</span>
+          <h3>Weather App</h3>
+          <p>Create an app that shows weather data using a public API and search feature.</p>
+          <button onclick="openModal('Weather App', 'Practice fetch API, async/await, error handling, search input, and dynamic UI updates.')">
+            View Details
+          </button>
+        </div>
+
+        <div class="project-card" data-level="intermediate">
+          <span class="tag">Intermediate</span>
+          <h3>Quiz App</h3>
+          <p>Build a quiz app with multiple questions, score tracking, and result page.</p>
+          <button onclick="openModal('Quiz App', 'Practice arrays of objects, conditional logic, DOM updates, and user interaction.')">
+            View Details
+          </button>
+        </div>
+
+        <div class="project-card" data-level="advanced">
+          <span class="tag">Advanced</span>
+          <h3>URL Shortener UI</h3>
+          <p>Design a frontend for shortening long URLs and showing copied short links.</p>
+          <button onclick="openModal('URL Shortener UI', 'Practice forms, validation, copy-to-clipboard feature, local storage, and clean dashboard UI.')">
+            View Details
+          </button>
+        </div>
+
+        <div class="project-card" data-level="advanced">
+          <span class="tag">Advanced</span>
+          <h3>Developer Dashboard</h3>
+          <p>Create a dashboard to track skills, completed projects, and learning progress.</p>
+          <button onclick="openModal('Developer Dashboard', 'Practice charts, cards, filters, progress bars, and reusable UI components.')">
+            View Details
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="cheatsheets">
+      <h2 class="section-title">Cheatsheets & Basics</h2>
+      <p class="section-subtitle">Quick reference guides and essentials to get started with each language.</p>
+
+      <div class="developer-selector">
+        <div class="dev-card" onclick="openCheatsheet('java')">
+          <div class="dev-icon">☕</div>
+          <h3>Java Cheatsheet</h3>
+          <p>Syntax, basics, and quick references</p>
+        </div>
+
+        <div class="dev-card" onclick="openCheatsheet('python')">
+          <div class="dev-icon">🐍</div>
+          <h3>Python Cheatsheet</h3>
+          <p>Syntax, basics, and quick references</p>
+        </div>
+
+        <div class="dev-card" onclick="openCheatsheet('javascript')">
+          <div class="dev-icon">⚛️</div>
+          <h3>JavaScript Cheatsheet</h3>
+          <p>Syntax, basics, and quick references</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials">
+      <h2 class="section-title">Success Stories</h2>
+      <p class="section-subtitle">See what learners have achieved with DevPath.</p>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"DevPath helped me transition from a complete beginner to landing my first frontend job in just 6 months. The roadmap was incredibly structured!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">📍</div>
+            <div class="author-info">
+              <strong>Sarah Mitchell</strong>
+              <p>Frontend Developer at TechCorp</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"The MERN stack roadmap gave me exactly what I needed to build full-stack applications. The step-by-step projects were invaluable!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">💼</div>
+            <div class="author-info">
+              <strong>Raj Kumar</strong>
+              <p>Full-stack Developer at StartupXYZ</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"I loved the Java Full Stack roadmap. It covered everything from basics to deployment. Now I'm building enterprise applications!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">🚀</div>
+            <div class="author-info">
+              <strong>Priya Sharma</strong>
+              <p>Java Backend Developer at Innovation Labs</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"The cheatsheets and quick references saved me so much time. Perfect for when you need a quick reminder of syntax!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">⭐</div>
+            <div class="author-info">
+              <strong>Alex Thompson</strong>
+              <p>Web Developer & DevPath User</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"The projects are practical and real-world. I can actually show them to employers. This platform is a game-changer!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">🎯</div>
+            <div class="author-info">
+              <strong>Emma Wilson</strong>
+              <p>Junior Developer at CloudTech</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"DevPath's structured approach helped me stay motivated throughout my learning journey. Highly recommended!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">💡</div>
+            <div class="author-info">
+              <strong>Mike Chen</strong>
+              <p>Full-stack Engineer at WebSolutions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-subtitle">Find answers to common questions about DevPath and your learning journey.</p>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <h4>How long does it take to complete a roadmap?</h4>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer" style="display:none;">
+            <p>The duration varies based on your prior experience and learning speed. Most roadmaps take 6-12 months of consistent learning (20-30 hours per week). You can adjust the pace based on your schedule.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <h4>Do I need any prerequisites to start learning?</h4>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer" style="display:none;">
+            <p>For frontend development, basic computer skills are enough. For backend development, it's helpful to understand fundamentals like variables and functions, but not required. We start from the basics!</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <h4>Are the projects portfolio-ready?</h4>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer" style="display:none;">
+            <p>Yes! Our projects are designed to be real-world and portfolio-ready. You can showcase them to employers and include them in your GitHub portfolio to enhance your job prospects.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <h4>Which stack should I choose - Java, Python, or MERN?</h4>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer" style="display:none;">
+            <p>Choose based on your interests: Java (enterprise applications), Python (versatile, data science), or MERN (modern web development). All three are in high demand. Consider job market trends in your region and personal preference!</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <h4>Can I switch between different tracks?</h4>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer" style="display:none;">
+            <p>Absolutely! Learning one stack makes it easier to learn others. Many fundamentals are universal. You can learn frontend first and then add backend, or vice versa.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <h4>What if I get stuck on a topic?</h4>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer" style="display:none;">
+            <p>We provide resources, cheatsheets, and step-by-step guides for each topic. Additionally, you can seek help in community forums, Stack Overflow, or join coding groups on Discord and Reddit.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <h4>Do you offer certificates?</h4>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer" style="display:none;">
+            <p>Currently, we focus on practical skills and real projects. Your portfolio and completed projects serve as the best proof of your abilities for employers.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <h4>Is DevPath free or paid?</h4>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer" style="display:none;">
+            <p>DevPath is completely free! Our mission is to make quality education accessible to everyone. We believe everyone should have the opportunity to learn programming.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <h4>How do I stay motivated while learning?</h4>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer" style="display:none;">
+            <p>Break learning into small milestones, celebrate completed projects, join communities, practice daily, and remember why you started. Consistency is key - even 30 minutes daily is better than irregular long sessions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="projectModal">
+    <div class="modal-content">
+      <h2 id="modalTitle"></h2>
+      <p id="modalText"></p>
+      <button class="close" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
