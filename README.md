@@ -294,5 +294,6 @@ DevPath/
 ├── script.js
 └── README.md
 📸 Screenshots
-"C:\Users\Pooja\OneDrive\Pictures\Screenshots\Screenshot 2026-05-18 204125.png"
+<img width="879" height="436" alt="Screenshot 2026-05-18 204125" src="https://github.com/user-attachments/assets/17ca647f-b0a4-49b4-8c7b-8900f79538c6" />
+
 
