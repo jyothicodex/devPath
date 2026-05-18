@@ -294,4 +294,5 @@ DevPath/
 ├── script.js
 └── README.md
 📸 Screenshots
-<img width="896" height="433" alt="image" src="https://github.com/user-attachments/assets/8b372861-c08d-4072-844c-bbdf9f597e4e" />
+<img width="941" height="434" alt="image" src="https://github.com/user-attachments/assets/ef39ce8e-70c5-4094-a041-3b17b4c5de76" />
+
