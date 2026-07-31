@@ -39,4 +39,13 @@ Many beginners feel confused about:
 screenshots 
 <img width="879" height="436" alt="Screenshot 2026-05-18 204125" src="https://github.com/user-attachments/assets/0722211a-d6c3-4213-a89f-2620697ac07f" />
 
+## 🛠️ Tech Stack & Architecture
+
+DevPath is built with a lightweight, zero-dependency frontend stack designed for maximum performance and fast load times:
+
+- **Frontend Core:** HTML5, CSS3, Modern Vanilla JavaScript (ES6+)
+- **Styling & UI:** Custom CSS Variables, Flexbox/Grid Layouts, Responsive Dark Theme
+- **Interactivity:** Dynamic Modals, Client-Side Filtering, DOM Manipulation
+
+
 
